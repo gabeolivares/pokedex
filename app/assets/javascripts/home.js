@@ -1,0 +1,76 @@
+function getPokemon() {
+  name = $('#pokemon-name').val().toLowerCase()
+  $.ajax({
+    url: "http://pokeapi.co/api/v1/pokemon/" + name,
+    type: 'GET',
+    success: function(data) {
+      console.log(data)
+      document.getElementById('poke-info').style.display = 'block'
+      document.getElementById('info-container').innerHTML = ''
+      html_content = ''
+      html_content += "<h1 style='text-decoration: underline;'> " + data.name + "</h1>"
+      html_content += "<br>"
+      //TO DO: Change to sprite call with V2 api do not call img url. No control over img id from api.
+      //v1 is strickly hardcoding img id because pokeapi has consistent id in image url
+      html_content += "<img src='http://pokeapi.co/media/img/" + data.pkdx_id + ".png'>"
+      html_content += "<br>"
+      html_content += "Attack: " + data.attack
+      html_content += "<br>"
+      html_content += "Defense: " + data.defense
+      html_content += "<br>"
+      html_content += "Catch Rate: " + data.catch_rate
+      html_content += "<br>"
+      html_content += "Experience: " + data.exp
+      html_content += "<br>"
+      html_content += "HP: " + data.hp
+      html_content += "<br>"
+      html_content += "Height: " + data.height
+      html_content += "<br>"
+      html_content += "Weight: " + data.weight
+      html_content += "<br>"
+      html_content += "Speed: " + data.speed
+      html_content += "<br>"
+      html_content += "Special Attack: " + data.sp_atk
+      html_content += "<br>"
+      html_content += "Special Defense: " + data.sp_def
+      html_content += "<br>"
+      html_content += "<br>"
+      
+      if ( data.pkdx_id < 494) {
+        html_content += "<audio controls>"
+
+        html_content += "<source src='assets/" + data.pkdx_id + ".mp3' type='audio/mpeg'>"
+        html_content += "</audio>"
+      }
+      /*
+      //FUNTION TO MAKE GET CALL TO GET EVOLbUTION
+      //TO DO:: MAKE SURE THAT EVOLUTION EXISTS IF EMPTY DONT DISPLAY ANYTHING
+        $.each(data.evolutions, function(key, value) {
+            console.log(value);
+            console.log(value.resource_uri);
+            h
+            $.ajax({
+              url: "http://pokeapi.co/" + value.resource_uri,
+              type: 'GET',
+              success: function(data) {
+                console.log(data)
+                console.log('IN SIDE EVOLUTION')
+            }
+        });
+      });*/
+      document.getElementById('info-container' ).innerHTML = html_content
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+        console.log(xhr.status);
+        console.log(thrownError);
+        document.getElementById('poke-info').style.display = 'block'
+        document.getElementById('info-container').innerHTML = ''
+        html_content = ''
+        html_content += "<h1>Pokémon Not Found</h1>"
+        html_content += "<br>"
+        html_content += "Please make sure the Pokémon is spelt correctly or the number is correct."
+        document.getElementById('info-container' ).innerHTML = html_content
+      }
+
+  });
+}

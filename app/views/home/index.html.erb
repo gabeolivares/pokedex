@@ -1,0 +1,89 @@
+<!-- Header -->
+			<section id="header">
+				<header>
+					<h1>Pokédex Application</h1>
+					<p>By Gabriel Olivares</p>
+				</header>
+				<footer>
+					<a href="#banner" class="button style2 scrolly-middle">Catch Em All!</a>
+				</footer>
+			</section>
+
+		<!-- Welcome Banner -->
+			<section id="banner">
+				<header>
+					<h2>Welome to Pokédex!</h2>
+				</header>
+				<p>This the Pokédex application made by Gabe Olivares using <a href="http://pokeapi.co/">pokéapi</a>.<br> Here you will be able
+        to search for Pokémon and learn more about their statistics and vitals. <br> Click "Learn More" to learn how to use the application and to catch em all!</p>
+				<footer>
+					<a href="#first" class="button style2 scrolly">Learn More</a>
+				</footer>
+			</section>
+
+		<!-- Step One -->
+			<article id="first" class="container box style1 right">
+				<a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+				<div class="inner">
+					<header>
+						<h2>To Begin<br />
+						Type in a name</h2>
+					</header>
+					<p>Type in the name of a Pokémon and search and we will show you information about that Pokémon.</p>
+				</div>
+			</article>
+
+		<!-- Step Two -->
+			<article class="container box style1 left">
+				<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+				<div class="inner">
+					<header>
+						<h2>This step <br />
+						Is not done</h2>
+					</header>
+					<p>This step is not implemented yet. Future steps will be posted soon.</p>
+				</div>
+			</article>
+
+		<!-- Final Step -->
+			<article class="container box style2">
+				<header>
+					<h2>Final step</h2>
+					<p>This step is coming soon<br />
+					Soon more info will be implemented.</p>
+				</header>
+			</article>
+
+		<!-- Search Pokemon -->
+			<article class="container box style3">
+				<header>
+					<h2>Search Pokémon</h2>
+					<p>Type in the Pokémon's name or number and search to learn more!</p>
+				</header>
+				<div style="display: block; text-align:center;">
+					<div class="row 50%">
+						<div class="12u$">
+							<input id="pokemon-name" style="width:75%;" type="text" class="text" name="name" placeholder="Name" />
+						</div>
+						<div class="12u$">
+							<ul class="actions">
+								<li><input type="submit" value="Search" onclick="getPokemon();"/></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</article>
+      <article id="poke-info" style="display:none;" class="container box style3">
+				<header>
+					<h2>Info for Pokémon</h2>
+				</header>
+				<div id="info-container" style="display: block; text-align:center;">
+				</div>
+			</article>
+		<section id="footer">
+			<div class="copyright">
+				<ul class="menu">
+					<li>&copy; Gabe Olivares. All rights reserved.</li>
+				</ul>
+			</div>
+		</section>
