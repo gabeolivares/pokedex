@@ -1799,16 +1799,30 @@
 				display: block;
 				position: absolute;
 				top: 0;
-				width: 50%;
+				width: 45%;
 				height: 100%;
-				background: #152E33;
 				overflow: hidden;
 			}
 
 				.box.style1 .image img {
-					position: absolute;
-					top: 0;
-					height: 100%;
+					position: inital;
+					margin-top: 20%;
+					height: 50%;
+					width: auto;
+				}
+				.box.style1 .image2 {
+					display: block;
+				position: absolute;
+				top: 0;
+				margin-left: 10%;
+				height: 170%;
+				overflow: hidden;
+				}
+
+				.box.style1 .image2 img {
+					position: inital;
+					margin-top: 20%;
+					height: 50%;
 					width: auto;
 				}
 
