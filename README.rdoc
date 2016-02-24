@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a single page Ruby on Rails app using the Pokeapi (http://pokeapi.co/)
+Pokeapi is currently on v2 but this application uses v1.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+REQUIREMENTS
+-RAILS 4.2.4
+-RUBY 2.2.3
+
+After you clone the application run 'bundle install' to install gem file. This application does not use a database.
+Rails s to start development sever.
+Enjoy
+
+VERSION 2 COMING SOON
+-Use v2 of Pokeapi
+-Display evolutions, move, and more info of pokemon
