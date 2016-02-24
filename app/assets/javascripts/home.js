@@ -1,7 +1,7 @@
 function getPokemon() {
   name = $('#pokemon-name').val().toLowerCase()
   $.ajax({
-    url: "pokeapi.co/api/v1/pokemon/" + name,
+    url: "http://pokeapi.co/api/v1/pokemon/" + name,
     type: 'GET',
     success: function(data) {
       console.log(data)
