@@ -1,7 +1,7 @@
 function getPokemon() {
   name = $('#pokemon-name').val().toLowerCase()
   $.ajax({
-    url: "http://pokeapi.co/api/v1/pokemon/" + name,
+    url: "//pokeapi.co/api/v1/pokemon/" + name,
     type: 'GET',
     success: function(data) {
       console.log(data)
@@ -35,7 +35,7 @@ function getPokemon() {
       html_content += "Special Defense: " + data.sp_def
       html_content += "<br>"
       html_content += "<br>"
-      
+
       if ( data.pkdx_id < 494) {
         html_content += "<audio controls>"
 
