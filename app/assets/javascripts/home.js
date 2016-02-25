@@ -102,6 +102,7 @@ function getPokemon() {
             }
         });
       });*/
+      
       document.getElementById('info-container' ).innerHTML = html_content
     },
     error: function (xhr, ajaxOptions, thrownError) {
