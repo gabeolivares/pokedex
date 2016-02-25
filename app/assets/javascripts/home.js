@@ -1,3 +1,12 @@
+jQuery(function($){
+  $('#pokemon-name').keyup(function(event){
+      if(event.keyCode == 13){
+          $("#submit-pokemon").click();
+      }
+  });
+
+});
+
 function getPokemon() {
   name = $('#pokemon-name').val().toLowerCase()
   $.ajax({
@@ -34,11 +43,46 @@ function getPokemon() {
       html_content += "<br>"
       html_content += "Special Defense: " + data.sp_def
       html_content += "<br>"
+      if ( data.evolutions.length > 0 ) {
+        html_content += "<br>"
+        html_content += "Evolution(s): "
+        html_content += "<br>"
+        html_content += "<table>"
+        $.each(data.evolutions, function(key, value) {
+            html_content +="<tr>"
+            html_content += "<td>" + value.to + "</td>"
+            html_content += "</tr>"
+        });
+        html_content += "</table>"
+        html_content += "<br>"
+      }
+      html_content += "Abilities: "
+      html_content += "<br>"
+      html_content += "<table>"
+        $.each(data.abilities, function(key, value) {
+            var ability = value.name
+            var abilityName = ability.charAt(0).toUpperCase() + ability.slice(1);
+            html_content +="<tr>"
+            html_content += "<td>" + abilityName + "</td>"
+            html_content += "</tr>"
+        });
+      html_content += "</table>"
+      html_content += "<br>"
+      html_content += "Egg Cycles: "
+      html_content += "<br>"
+      html_content += "<table>"
+        $.each(data.egg_groups, function(key, value) {
+            var egg = value.name
+            var eggName = egg.charAt(0).toUpperCase() + egg.slice(1);
+            html_content +="<tr>"
+            html_content += "<td>" + eggName + "</td>"
+            html_content += "</tr>"
+        });
+      html_content += "</table>"
       html_content += "<br>"
 
       if ( data.pkdx_id < 494) {
         html_content += "<audio controls>"
-
         html_content += "<source src='assets/" + data.pkdx_id + ".mp3' type='audio/mpeg'>"
         html_content += "</audio>"
       }
@@ -61,8 +105,6 @@ function getPokemon() {
       document.getElementById('info-container' ).innerHTML = html_content
     },
     error: function (xhr, ajaxOptions, thrownError) {
-        console.log(xhr.status);
-        console.log(thrownError);
         document.getElementById('poke-info').style.display = 'block'
         document.getElementById('info-container').innerHTML = ''
         html_content = ''
