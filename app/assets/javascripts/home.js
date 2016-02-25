@@ -83,10 +83,9 @@ function getPokemon() {
 
       if ( data.pkdx_id < 494) {
         html_content += "<audio controls>"
-        html_content += "<source src='/" + data.pkdx_id + ".mp3' type='audio/mpeg'>"
+        html_content += "<source src='assets/" + data.pkdx_id + ".mp3' type='audio/mpeg'>"
         html_content += "</audio>"
       }
-      
       /*
       //FUNTION TO MAKE GET CALL TO GET EVOLbUTION
       //TO DO:: MAKE SURE THAT EVOLUTION EXISTS IF EMPTY DONT DISPLAY ANYTHING
